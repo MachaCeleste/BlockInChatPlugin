@@ -62,7 +62,7 @@ public class ChatGuildPatch
     [HarmonyPatch(typeof(ChatGuild), "RecibeMensajePrivado")]
     class RecibeMensajePrivadoPatch
     {
-        static bool Prefix(ChatGuild __instance, ref PlayerUtilsChat.ChatMessage message, ref string otherNickname, ref string ownerClientID)
+        static bool Prefix(ChatGuild __instance, ref PlayerUtilsChat.ChatMessage message, ref string otherNickname)
         {
             if (DataUtils.blockedPlayers.Contains(otherNickname)) return false;
             return true;
